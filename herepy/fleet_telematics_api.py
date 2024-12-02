@@ -28,7 +28,7 @@ class FleetTelematicsApi(HEREApi):
         """
 
         super(FleetTelematicsApi, self).__init__(api_key, timeout)
-        self._base_url = "https://wse.ls.hereapi.com/2/"
+        self._base_url = "https://wps.hereapi.com/v8/"
 
     def __create_find_sequence_parameters(
         self,
@@ -141,7 +141,7 @@ class FleetTelematicsApi(HEREApi):
             modes=modes,
         )
         response = self.__get(
-            self._base_url + "findsequence.json", data, WaypointSequenceResponse
+            self._base_url + "findsequence", data, WaypointSequenceResponse
         )
         return response
 
